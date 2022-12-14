@@ -1,12 +1,10 @@
 import animal.*;
-import auxiliaryLibrary.DataService;
-import auxiliaryLibrary.TextService;
 
 public class Main {
     public static void main(String[] args) {
 
-        Amphibian frog = new Amphibian("лягушка", 2, "болото", 0, "Квакушка");
         Amphibian frog1 = new Amphibian("лягушка", 2, "болото", 0, "Квакушка");
+        Amphibian frog2 = new Amphibian("лягушка", 2, "болото", 0, "Квакушка");
         Amphibian snakeFreshwater = new Amphibian("Уж Пресноводный", 1, "приводоёмье", 0);
         Herbivore gazelle = new Herbivore("Газель", 3, "степь", 80);
         Herbivore giraffe = new Herbivore("Жираф", 5, "саванна", 55);
@@ -22,5 +20,16 @@ public class Main {
         FlyingBird falcon = new FlyingBird("Сокол", 3, "всюду, кроме Антарктики", 320);
 
         Animal.show();
+
+        collateAnimalsReport(frog1, frog2);
+        collateAnimalsReport(gazelle, tiger);
+    }
+
+    public static void collateAnimalsReport(Animal animal1, Animal animal2) {
+        if (animal1.equals(animal2)) {
+            System.out.println("\nЭто одно и тоже животное.");
+        } else {
+            System.out.println("'\nЭто разные животные.");
+        }
     }
 }
